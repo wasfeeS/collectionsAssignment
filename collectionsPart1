@@ -1,0 +1,76 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList <String> cars = new ArrayList <String>();
+    cars.add("Pagani");
+    cars.add("Ferrari");
+    cars.add("Lamborghini");
+    cars.add("Porsche");
+    System.out.print(cars);
+    System.out.print("\nRemoving the first car.");
+    cars.remove(0);
+    System.out.print("\nNew first car is: " + cars.get(0));
+    System.out.print("\nRemove all cars:");
+    cars.clear();
+    System.out.print(cars);
+
+    LinkedList<Integer> nums = new LinkedList<Integer>();
+    nums.add(100);
+    nums.add(90);
+    nums.add(80);
+    nums.add(70);
+    nums.add(60);
+    System.out.println("\n\n"+nums);
+    System.out.println("Removing the first number.");
+    nums.removeFirst();
+    System.out.println(nums);
+    System.out.println("Removing the last number.");
+    nums.removeLast();
+    System.out.println(nums);
+    System.out.println("The new first and last numbers are: " + nums.getFirst() + " and " + nums.getLast());
+
+    HashSet<Double> percentage = new HashSet<Double>();
+    percentage.add(100.0);
+    percentage.add(57.7);
+    percentage.add(90.5);
+    percentage.add(81.8);
+    percentage.add(75.0);
+    percentage.add(50.0);
+    System.out.println("\n\nThere are " + percentage.size() + " grades in the set.");
+    System.out.println("The grades contain a perfect score?: " + percentage.contains(100.0));
+    System.out.println("The grades contain a failing score?: " + percentage.contains(50.0));
+    System.out.println("Lets remove the failing score.");
+    percentage.remove(50.0);
+    System.out.println(percentage);
+
+    HashMap<String, String> chessCoordinates = new HashMap<>();
+    chessCoordinates.put("a1", "White Rook");
+    chessCoordinates.put("b2", "White Knight");
+    chessCoordinates.put("c3", "White Bishop");
+    chessCoordinates.put("d4", "White Queen");
+    System.out.println("\n\nOriginal Chess Coordinate Map:");
+    System.out.println("The piece at a1 is: " + chessCoordinates.get("a1"));
+    System.out.println("The white rook is taken");
+    chessCoordinates.remove("a1");
+    chessCoordinates.put("a1", "Black Queen");
+    System.out.println("The new piece at a1 is: " + chessCoordinates.get("a1"));
+    System.out.println(chessCoordinates);
+
+    PriorityQueue<Integer> speedLimits = new PriorityQueue<>();
+    speedLimits.add(30); 
+    speedLimits.add(40); 
+    speedLimits.add(50); 
+    speedLimits.add(60); 
+    System.out.print("\n\nOriginal Speed Limits Queue:");
+    System.out.print(speedLimits);
+    System.out.println("\nEntering school zone");
+    System.out.println("Now going: " + speedLimits.poll() + "km/h");
+    System.out.println("Left school zone, speed up.");
+    System.out.println("Car is low on fuel, don't speed up past 50km/h.");
+    speedLimits.remove(60);
+    System.out.println("New speeds the car cruises at: " + speedLimits);
+    speedLimits.add(0);
+    System.out.println("Car comes to a stop after fuel runs out, new speed: " + speedLimits.peek());
+  }
+}
